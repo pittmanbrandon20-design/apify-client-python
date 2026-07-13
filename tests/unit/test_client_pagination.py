@@ -130,9 +130,8 @@ _REBUILT_RESPONSE_WRAPPERS = (
     'ListOfTasksResponse',
     'ListOfVersionsResponse',
     'ListOfWebhooksResponse',
+    'ListOfWebhookDispatchesResponse',
 )
-
-
 @pytest.fixture(autouse=True)
 def _relax_item_validation() -> Any:
     """Relax only the element type of `items` on paginated list models for the test run.
