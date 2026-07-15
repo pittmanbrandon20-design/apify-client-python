@@ -83,3 +83,6 @@ storage/
 
 # Tmp dir
 tmp/
+
+# local secrets
+.env

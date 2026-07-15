@@ -127,10 +127,12 @@ _REBUILT_RESPONSE_WRAPPERS = (
     'ListOfVersionsResponse',
     'ListOfWebhookDispatchesResponse',
     'ListOfWebhooksResponse',
+    'ListOfWebhookDispatchesResponse',
 )
 # Outer wrappers that embed a relaxed list model via `.data`. Their compiled schema pins the inner's schema at
 # construction time, so they need a forced rebuild to pick up the relaxation. The wrappers themselves are not mutated —
 # their own field annotations stay as-is.
+
 
 
 
