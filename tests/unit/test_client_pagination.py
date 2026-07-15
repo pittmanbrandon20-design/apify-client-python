@@ -111,10 +111,6 @@ _RELAXED_LIST_MODELS = (
     'ListOfWebhookDispatches',
     'ListOfWebhooks',
 )
-
-# Outer wrappers that embed a relaxed list model via `.data`. Their compiled schema pins the inner's schema at
-# construction time, so they need a forced rebuild to pick up the relaxation. The wrappers themselves are not mutated —
-# their own field annotations stay as-is.
 _REBUILT_RESPONSE_WRAPPERS = (
     'ListOfActorsInStoreResponse',
     'ListOfActorsResponse',
@@ -129,9 +125,17 @@ _REBUILT_RESPONSE_WRAPPERS = (
     'ListOfSchedulesResponse',
     'ListOfTasksResponse',
     'ListOfVersionsResponse',
+    'ListOfWebhookDispatchesResponse',
     'ListOfWebhooksResponse',
     'ListOfWebhookDispatchesResponse',
 )
+# Outer wrappers that embed a relaxed list model via `.data`. Their compiled schema pins the inner's schema at
+# construction time, so they need a forced rebuild to pick up the relaxation. The wrappers themselves are not mutated —
+# their own field annotations stay as-is.
+
+
+
+
 @pytest.fixture(autouse=True)
 def _relax_item_validation() -> Any:
     """Relax only the element type of `items` on paginated list models for the test run.
